@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+  <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -14,16 +14,13 @@
       <div class="row">
         <label class="title">Shapes</label>
         <ul class="options">
-          <li class="option">
-            <img src="rectangle.jpg" alt="">
-            <span>Rectangle</span>
+          <li class="option tool" id="rectangle">
+            <span>Quadrilateral</span>
           </li>
-          <li class="option">
-            <img src="rectangle.jpg" alt="">
+          <li class="option tool" id="circle">
             <span>Circle</span>
           </li>
-          <li class="option">
-            <img src="rectangle.jpg" alt="">
+          <li class="option tool" id="triangle">
             <span>Triangle</span>
           </li>
           <li class="option">
@@ -35,16 +32,14 @@
       <div class="row">
         <label class="title">Options</label>
         <ul class="options">
-          <li class="option">
-            <img src="rectangle.jpg" alt="">
+          <li class="option active tool" id="brush">
             <span>Brush</span>
           </li>
-          <li class="option">
-            <img src="rectangle.jpg" alt="">
+          <li class="option tool" id="eraser">
             <span>Eraser</span>
           </li>
           <li class="option">
-            <input type="range" id="size-slider">
+            <input type="range" id="size-slider" min="1" max="20" value="5">
           </li>
         </ul>
       </div>
@@ -65,8 +60,9 @@
         <button class="save-img">Save as Image</button>
       </div>
     </section>
-    <section class="drawing-board"></section>
-  <script src="script.js"></script>
+    <section class="drawing-board">
+      <canvas></canvas>
+  </section>
   </div>
 </body>
 

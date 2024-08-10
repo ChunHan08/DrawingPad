@@ -21,18 +21,13 @@ body{
 }
 section{
   background: #fff;
-  padding: 20px;
   border-radius: 7px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
 }
 .tools-board{
   width: 210px;
   padding: 15px 22px 0;
 }
 .tools-board .row{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
 .row .options{
@@ -46,7 +41,7 @@ section{
   margin-bottom: 10px;
 }
 .option:is(:hover, .active) img{
-  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg);
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
 }
 .option :where(span, label){
   color: #333;
@@ -83,36 +78,22 @@ option.option:is(:hover, .active) :where(span, label){
   position: relative;
 }
 .colors .option:nth-child(1){
-  background: #fff;
+  background: #ff0a0a;
   border: 1px soild #bfbfbf;
 }
 .colors .option:nth-child(2){
-  background: #000;
+  background: #00ff91;
 }
 .colors .option:nth-child(3){
-  background: #ff0000;
+  background: #1500b8;
 }
 .colors .option:nth-child(4){
-  background: #ff7d00;
+  background: #241100;
 }
 .colors .option:nth-child(5){
   background: #ffff00;
 }
-.colors .option:nth-child(6){
-  background: #00ff00;
-}
-.colors .option:nth-child(7){
-  background: #00ffff;
-}
-.colors .option:nth-child(8){
-  background: #0000ff;
-}
-.colors .option:nth-child(9){
-  background: #ff00ff;
-}
-.colors .option:nth-child(10){
-  background: #8f00ff;
-}
+
 .colors .option::before{
   content: '';
   position: absolute;
@@ -125,9 +106,7 @@ option.option:is(:hover, .active) :where(span, label){
   transform: translate(-50%, -50%);
   border: 2px solid #fff;
 }
-.colors .option:is(:hover, .active)::before{
-  border-color: #ccc;
-}
+
 .colors .option:first-child.selected::before{
   border-color: #ccc;
 }
@@ -145,8 +124,7 @@ option.option:is(:hover, .active) :where(span, label){
   background: none;
   padding: 11px 0;
   margin-bottom: 13px;
-  pointer-events: none;
-  transition: 0.2s ease;
+  border-radius: 4px;
 }
 .buttons .clear-canvas{
   color: #6C757D;
@@ -158,28 +136,14 @@ option.option:is(:hover, .active) :where(span, label){
   background: #6C757D;
 }
 .buttons .save-img{
-  color: #fff;
   background: #0ef;
   border: 1px solid #0ef;
-  transition: all 0.3s ease;
 }
 .drawing-board{
   flex: 1;
-}
-.container .card{
-  position: relative;
-  width: 280px;
-  height: 400px;
-  margin: 30px;
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-  border-radius: 15px;
-  background: rgba(255,255,255,0.1);
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid rgba(255,255,255,0.5);
-  border-left: 1px solid rgba(255,255,255,0.5);
-  backdrop-filter: blur(5px);
 }
-
+.drawing-board canvas{
+  width: 100%;
+  height: 100%;
+}
